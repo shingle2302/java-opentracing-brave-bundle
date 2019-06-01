@@ -1,0 +1,15 @@
+*~
+#*
+*#
+.#*
+.factorypath
+.classpath
+.project
+.settings/
+target/
+_site/
+.idea
+*.iml
+*.swp
+/opentracing-brave/nbproject/
+dependency-reduced-pom.xml
