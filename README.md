@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/opentracing-contrib/java-opentracing-brave-bundle.png)](https://travis-ci.org/opentracing-contrib/java-opentracing-brave-bundle)
-
 # OpenTracing Brave Tracer Bundle
 
 OpenTracing [Brave](https://github.com/openzipkin-contrib/brave-opentracing) Bundle. It builds on top of the [brave](https://github.com/apache/incubator-zipkin-brave/tree/master/brave) artifact, which uses `Thrift`.
