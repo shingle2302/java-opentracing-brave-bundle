@@ -26,8 +26,9 @@ import javax.annotation.Priority;
 
 /**
  * @author zhangbin
+ * Higher priority than the original factory (which we wrap)
  */
-@Priority(1) // Higher priority than the original factory (which we wrap).
+@Priority(1)
 public class BraveTracerFactory implements TracerFactory {
 
     public BraveTracerFactory() {

@@ -23,6 +23,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * @author zhangbin
+ */
 public class Utils {
     public static File savePropertiesToTempFile(Properties props) throws IOException {
         File file = null;
@@ -33,8 +36,9 @@ public class Utils {
             }
 
         } catch (Exception e) {
-            if (file != null)
+            if (file != null) {
                 file.delete();
+            }
 
             throw e;
         }

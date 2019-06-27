@@ -68,14 +68,16 @@ public final class Configuration {
 
     public static Properties loadConfigurationFile() {
         String path = System.getProperty(CONFIGURATION_FILE_KEY);
-        if (path == null)
+        if (path == null) {
             path = DEFAULT_CONFIGURATION_FILE_PATH;
+        }
 
         Properties props = new Properties();
 
         File file = new File(path);
-        if (!file.isFile())
+        if (!file.isFile()) {
             return props;
+        }
 
         try (FileInputStream stream = new FileInputStream(file)) {
             props.load(stream);
@@ -262,7 +264,6 @@ public final class Configuration {
             return this;
         }
 
-        @SuppressWarnings("UnusedAssignment")
         Sender getSender() {
             String senderType = Configuration.stringOrDefault(this.type, "URLConnection");
             String senderAddress = Configuration.stringOrDefault(this.address, "http://127.0.0.1:9411/api/v2/spans");
@@ -272,12 +273,16 @@ public final class Configuration {
                     switch (senderType) {
                         case "OkHttp":
                             clazz = Class.forName("zipkin2.reporter.okhttp3.OkHttpSender");
+                            break;
                         case "Kafka08":
                             clazz = Class.forName("zipkin2.reporter.kafka08.KafkaSender");
+                            break;
                         case "Kafka11":
                             clazz = Class.forName("zipkin2.reporter.kafka11.KafkaSender");
+                            break;
                         case "RabbitMQ":
                             clazz = Class.forName("zipkin2.reporter.amqp.RabbitMQSender");
+                            break;
                         default:
                             clazz = Class.forName("zipkin2.reporter.urlconnection.URLConnectionSender");
                     }
@@ -285,12 +290,10 @@ public final class Configuration {
                     sender = (Sender) method.invoke(null, senderAddress);
                 } catch (ClassNotFoundException e) {
                     logger.log(Level.SEVERE, e.toString());
-                } catch (NoSuchMethodException e) {
+                } catch (NoSuchMethodException | InvocationTargetException e) {
                     logger.log(Level.SEVERE, e.getMessage());
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    logger.log(Level.SEVERE, e.getMessage());
                 }
             }
             return this.sender;

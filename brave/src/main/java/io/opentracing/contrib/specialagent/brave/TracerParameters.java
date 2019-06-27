@@ -24,6 +24,9 @@ import io.opentracing.contrib.specialagent.common.Configuration;
 import java.util.Properties;
 import java.util.logging.Logger;
 
+/**
+ * @author zhangbin
+ */
 public final class TracerParameters {
 
     private TracerParameters() {
