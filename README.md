@@ -1,6 +1,6 @@
 # OpenTracing Brave Tracer Bundle
 
-OpenTracing [Brave](https://github.com/openzipkin-contrib/brave-opentracing) Bundle. It builds on top of the [brave](https://github.com/apache/incubator-zipkin-brave/tree/master/brave) artifact, which uses `Thrift`.
+OpenTracing [Brave](https://github.com/openzipkin-contrib/brave-opentracing) Bundle. It builds on top of the [brave](https://github.com/apache/incubator-zipkin-brave/tree/master/brave) artifact.
 
 This project builds a fat-jar with all its dependencies, along with simple configuration, in order to ease deployment, which can then be retrieved using the `TracerFactory` pattern (from [java-tracerresolver](https://github.com/opentracing-contrib/java-tracerresolver) ). It can be used with any OpenTracing instrumentation library.
 
