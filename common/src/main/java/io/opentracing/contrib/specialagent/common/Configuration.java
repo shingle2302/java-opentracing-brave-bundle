@@ -115,7 +115,7 @@ public final class Configuration {
     }
 
     public synchronized void closeTracer() {
-        tracer.scopeManager().active().close();
+        tracer.close();
     }
 
 

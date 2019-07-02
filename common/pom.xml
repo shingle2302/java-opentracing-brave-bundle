@@ -28,8 +28,8 @@
     <name>Common Tracers Bundles layer</name>
 
     <properties>
-        <brave-opentracing.version>0.33.10</brave-opentracing.version>
-        <zipkin-reporter.version>2.7.14</zipkin-reporter.version>
+        <brave-opentracing.version>0.34.0</brave-opentracing.version>
+        <zipkin-reporter.version>2.8.4</zipkin-reporter.version>
     </properties>
 
     <dependencies>
@@ -59,7 +59,7 @@
         </dependency>
         <dependency>
             <groupId>io.zipkin.reporter2</groupId>
-            <artifactId>zipkin-sender-kafka11</artifactId>
+            <artifactId>zipkin-sender-kafka</artifactId>
             <version>${zipkin-reporter.version}</version>
             <scope>provided</scope>
         </dependency>
